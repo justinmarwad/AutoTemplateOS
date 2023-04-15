@@ -1,0 +1,9 @@
+
+- name: Transfer and execute a script.
+  hosts: all
+  tasks:
+    - name: Step 1 - Run Ubuntu 22.04 Template Creation 
+      ansible.builtin.script: ubuntu-22.04.sh
+      register: results
+
+    - debug: var=results.stdout_lines
